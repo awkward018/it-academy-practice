@@ -11,19 +11,23 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-            StringBuilder sb = new StringBuilder("Hello, Guys!");
-            Console.WriteLine(sb.Capacity);
-            Console.WriteLine(sb.Length);
-            Console.WriteLine(sb.MaxCapacity);
+            string a = "Hello, guys!";
+            string b = "HELLO, GUYS!";
 
-            sb.Append("\nHello");
-            Console.WriteLine($"{sb.Length}---{sb.Capacity}");
+            var res = a.Equals(b, StringComparison.OrdinalIgnoreCase);
 
-      
+            var str1 = "Hello";
+            var str2 = "my friend";
+            var res1 = string.Compare(str1, str2);
 
+            var culture = System.Globalization.CultureInfo.CurrentCulture;
+            Console.WriteLine($"{culture.DisplayName}");
 
+            foreach (var item in culture.DateTimeFormat.DayNames)
+            {
+                Console.Write($"{item}-");
 
-
+            }
             Console.ReadLine();
         }
     }
